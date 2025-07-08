@@ -1,0 +1,17 @@
+{
+    "name": "Basic Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "target": "dev"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "zxh404.vscode-proto3"
+            ]
+        }
+    }
+    
+}

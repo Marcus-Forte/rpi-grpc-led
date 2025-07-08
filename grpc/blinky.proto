@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+// Request message for setting the LED.
+message SetLEDRequest {
+    
+    int32 line = 1; // Gpio Line 
+    bool on = 2;
+}
+
+// The BlinkService defines the RPC for controlling an LED.
+service BlinkService {
+    // Sets the LED state.
+    rpc SetLED(SetLEDRequest) returns (google.protobuf.Empty);
+}
