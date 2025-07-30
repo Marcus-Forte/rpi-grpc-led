@@ -36,5 +36,5 @@ target_link_libraries(blinky blinky_grpc)
 
 install(TARGETS blinky
     DESTINATION ${CMAKE_INSTALL_BINDIR} RUNTIME_DEPENDENCY_SET runtime_targets)
-install(RUNTIME_DEPENDENCY_SET runtime_targets PRE_EXCLUDE_REGEXES "." PRE_INCLUDE_REGEXES "gpio"
+install(RUNTIME_DEPENDENCY_SET runtime_targets PRE_EXCLUDE_REGEXES "." PRE_INCLUDE_REGEXES "gpio|boost"
 DESTINATION ${CMAKE_INSTALL_LIBDIR})
