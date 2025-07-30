@@ -9,8 +9,13 @@
         "vscode": {
             "extensions": [
                 "ms-vscode.cpptools-extension-pack",
-                "zxh404.vscode-proto3"
-            ]
+                "zxh404.vscode-proto3",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ],
+            "settings": {
+                "C_Cpp.intelliSenseEngine": "disabled",
+				"clangd.arguments": ["-header-insertion=never"]
+            }
         }
     }
     
