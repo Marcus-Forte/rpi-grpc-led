@@ -14,6 +14,11 @@ public:
                         const ::SetLEDRequest *request,
                         ::google::protobuf::Empty *response) override;
 
+  // Override the IsOn RPC method.
+  ::grpc::Status IsOn(::grpc::ServerContext *context,
+                      const ::IsOnRequest *request,
+                      ::IsOnResponse *response) override;
+
 private:
   std::shared_ptr<ILED> led_interface_;
 };

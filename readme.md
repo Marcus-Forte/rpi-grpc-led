@@ -10,7 +10,7 @@ This will build and save an image to an archive. Copy the archive to the target 
 
 ## Use
 
-After copying and loading the image, run `docker run --device /dev/gpiochip0 -p 50051:50051 --init --rm -it blinky blinky --chip gpiochip0`.
+After copying and loading the image, run at the target `docker run --device /dev/gpiochip0 -p 50051:50051 --init --rm -it blinky blinky --chip gpiochip0`.
 
 Via gRPC, use the given grpc/blinky.proto to control the LED via any client.
 

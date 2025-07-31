@@ -16,3 +16,9 @@ void SimLed::SetOn(uint32_t line, bool on) {
     }
   }
 }
+
+bool SimLed::isOn(uint32_t line) const {
+  // Simulate checking the LED state
+  std::println("Simulated check for LED on line {}", line);
+  return false; // Always return false for simulation
+}
