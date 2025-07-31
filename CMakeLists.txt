@@ -27,7 +27,13 @@ add_library(blinky_grpc
     ${CMAKE_CURRENT_BINARY_DIR}/blinky.pb.cc
     ${CMAKE_CURRENT_BINARY_DIR}/blinky.grpc.pb.cc
 )
-target_link_libraries(blinky_grpc ${_GRPC_GRPCPP} ${_PROTOBUF_LIBPROTOBUF} ledlib Boost::program_options) # Ideally we abstract gpio with an interface, but for simplicity we link directly to gpiod here.
+target_link_libraries(blinky_grpc
+    ${_GRPC_GRPCPP}
+    ${_PROTOBUF_LIBPROTOBUF}
+    ${_REFLECTION}
+    Boost::program_options
+    ledlib
+)
 
 target_include_directories(blinky_grpc PUBLIC ${CMAKE_CURRENT_BINARY_DIR} )
 

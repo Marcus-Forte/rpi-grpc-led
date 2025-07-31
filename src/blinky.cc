@@ -4,6 +4,7 @@
 #include "simLed.hh"
 
 #include <boost/program_options.hpp>
+#include <grpcpp/ext/proto_server_reflection_plugin.h>
 #include <grpcpp/server.h>
 #include <grpcpp/server_builder.h>
 
@@ -47,6 +48,7 @@ int main(int argc, char **argv) {
 
   BlinkyServiceImpl service(led);
 
+  grpc::reflection::InitProtoReflectionServerBuilderPlugin();
   grpc::ServerBuilder builder;
   builder.AddListeningPort("0.0.0.0:50051", grpc::InsecureServerCredentials());
   builder.RegisterService(&service);
